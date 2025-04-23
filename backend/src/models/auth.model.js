@@ -22,12 +22,6 @@ const authSchema = new mongoose.Schema({
         required: true,
         trim: true 
     },
-    gender: {
-        type: String,
-        enum: ["male", "female", "transgender"],
-        required: true,
-        trim: true 
-    },
     password: {
         type: String,
         required: true,
@@ -35,17 +29,17 @@ const authSchema = new mongoose.Schema({
     },
     role: {
         type: String,
-        enum: ["Admin", "Customer", "Super Admin"],
+        enum: ["Admin", "Super Admin"],
         required: true,
         trim: true,
-        default: "Customer"
+        default: "Admin"
     },
     status: {
         type: String,
         enum: ["Active", "Blocked", "Pending"],
         required: true,
         trim: true,
-        default: "Active"
+        default: "Pending"
     },
     createdDate: {
         type: Date,

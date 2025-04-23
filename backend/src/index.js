@@ -7,11 +7,22 @@ app.use(express.json());
 app.use(cors())
 
 app.get("/", (req, res) => {
-    return res.status(200).json({ title: "HexBytes", message: "Assigned task", Status: true });
+    return res.status(200).json({ title: "HexBytes", message: "CRM Calculator", Status: true });
 })
 
-const userRouter = require("./routes/user.route");
-app.use("/api/user", userRouter);
+const authRouter = require("./routes/Auth.route");
+app.use("/api/admin", authRouter);
+
+// const authRouter = require("./routes/.route");
+// app.use("/api/user", userRouter);
+
+// const userRouter = require("./routes/user.route");
+// app.use("/api/user", userRouter);
+
+
+
+// const agePointsRouter = require("./routes/AgePoints.route");
+// app.use("/super-admin/age_points", agePointsRouter);
 
 // const productRouter = require("./routes/product.route");
 // app.use("/api/product", productRouter);
