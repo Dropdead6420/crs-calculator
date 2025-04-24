@@ -6,11 +6,17 @@ const agePointsSchema = new mongoose.Schema({
     required: true,
     trim: true
   },
-  pointsWithSpouse: {
-    type: Number,
-    required: true
+  coreHumanCapitalFactors: { // Renamed from "Core / human capital factors"
+    pointsWithSpouse: {
+      type: Number,
+      required: true
+    },
+    pointsWithoutSpouse: {
+      type: Number,
+      required: true
+    }
   },
-  pointsWithoutSpouse: {
+  agePoints: {
     type: Number,
     required: true
   }

@@ -13,6 +13,24 @@ app.get("/", (req, res) => {
 const authRouter = require("./routes/Auth.route");
 app.use("/api/admin", authRouter);
 
+const maritalStatusOptionRouter = require("./routes/MaritalStatusOption.route");
+app.use("/api/marital-status", maritalStatusOptionRouter);
+
+const adminMaritalStatusOptionRouter = require("./routes/AdminMaritalStatusOption.route");
+app.use("/api/admin/marital-status", adminMaritalStatusOptionRouter);
+
+const agePointRouter = require("./routes/AgePoints.route");
+app.use("/api/age-points", agePointRouter);
+
+const adminAgePointRouter = require("./routes/AdminAgePoints.route");
+app.use("/api/admin/age-points", adminAgePointRouter);
+
+const educationPointRouter = require("./routes/EducationPoints.route");
+app.use("/api/education-points", educationPointRouter);
+
+const adminEducationPointRouter = require("./routes/AdminEducationPoints.route");
+app.use("/api/admin/education-points", adminEducationPointRouter);
+
 // const authRouter = require("./routes/.route");
 // app.use("/api/user", userRouter);
 

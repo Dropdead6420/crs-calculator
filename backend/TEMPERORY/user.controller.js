@@ -1,5 +1,5 @@
 const userService = require("../services/user.service");
-const jwtProvider = require("../utils/jwtProvider");
+const jwtProvider = require("../src/utils/jwtProvider");
 const bcrypt = require("bcrypt");
 
 const register = async (req, res) => {

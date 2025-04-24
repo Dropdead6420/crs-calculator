@@ -29,7 +29,45 @@ const validateSignUp = (req, res, next) => {
     next();
 };
 
-// For Sign In
+const validateAdmin = (req, res, next) => {
+    if (!req.body || typeof req.body !== 'object') {
+        return res.status(400).json({ message: "Invalid or missing request body", status: false });
+    }
+    
+    const { fullName, phone, email, password, role, status } = req.body;
+
+    if (fullName !== undefined && fullName.length < 3) {
+        return res.status(400).json({ message: "Full name must be at least 3 characters", status: false });
+    }
+
+    if (email !== undefined) {
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        if (!emailRegex.test(email)) {
+            return res.status(400).json({ message: "Invalid email format", status: false });
+        }
+    }
+
+    if (password !== undefined && password.length < 6) {
+        return res.status(400).json({ message: "Password must be at least 6 characters", status: false });
+    }
+
+    if (phone !== undefined && phone.length < 10) {
+        return res.status(400).json({ message: "Phone number must be at least 10 characters", status: false });
+    }
+
+    if (role !== undefined && role !== "Admin" && role !== "Super Admin") {
+        return res.status(400).json({ message: "Role must be either 'Admin' or 'Super Admin'", status: false });
+    }
+
+    if (status !== undefined && !["Active", "Pending", "Blocked"].includes(status)) {
+        return res.status(400).json({ message: "Status must be 'Active', 'Pending', or 'Blocked'", status: false });
+    }
+
+    next();
+};
+
+
+// For Update Admin
 const validateSignIn = (req, res, next) => {
     const { email, password } = req.body;
 
@@ -51,4 +89,5 @@ const validateSignIn = (req, res, next) => {
 module.exports = {
     validateSignUp,
     validateSignIn,
+    validateAdmin
 };

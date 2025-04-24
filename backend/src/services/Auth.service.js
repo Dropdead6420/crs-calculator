@@ -26,20 +26,72 @@ const createUser = async (userData) => {
     }
 }
 
-const findUserById = async (userId) => {
+const updateAdmin = async (userId, userData) => {
     try {
-        const user = await User.findById(userId)
+        await findUserById(userId);  
+
+        let updateFields = {};
         
-        if (!user) {
-            throw new Error("User not found with id : ", userId);
+        let { fullName, email, country, phone, password, role, status } = userData;
+
+        if (fullName) {
+            updateFields.fullName = fullName;
         }
 
-        return user;
+        if (email) {
+            const isEmailExist = await Auth.findOne({email});
+            if (isEmailExist) {
+                throw new Error (`Email is already in use : ${email}`);
+            }
+            updateFields.email = email;
+        }
 
+        if (country) {
+            updateFields.country = country;
+        }
+
+        if (phone) {
+            const isPhoneExist = await Auth.findOne({phone});
+            if (isPhoneExist) {
+                throw new Error (`Phone number is already in use : ${phone}`);
+            }
+            updateFields.phone = phone;
+        }
+
+        if (password) {
+            const genSaltPassword = await bcrypt.genSalt(10);
+            updateFields.password = await bcrypt.hash(password, genSaltPassword);
+        }
+
+        if (role) {
+            throw new Error(`Not allowed to set role`);
+        }
+
+        if (status) {
+            updateFields.status = status;
+        }
+
+        const updatedUser = await Auth.findByIdAndUpdate(userId, updateFields, { new: true });
+
+        return updatedUser;
     } catch (error) {
-        throw new Error({ Message: "While finding user with ID got an error", Error: error.message });
+        throw new Error(error.message || "Error updating user");
     }
 }
+
+const findUserById = async (id) => {
+    try {
+        const user = await Auth.findById(id);
+        if (!user) {
+            throw new Error(`User not found with id: ${user?._id}`);
+        }
+        return user;
+    } catch (error) {
+        // Include original error message for better debugging
+        throw new Error(`Error finding user by ID: ${error.message}`);
+    }
+};
+
 
 const getUserByEmail = async (email) => {
     try {
@@ -78,4 +130,4 @@ const getAllUsers = async () => {
     }
 }
 
-module.exports = { createUser, findUserById, getUserByEmail, getUserProfileByToken, getAllUsers };
+module.exports = { createUser, findUserById, getUserByEmail, getUserProfileByToken, getAllUsers, updateAdmin };

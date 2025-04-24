@@ -13,6 +13,18 @@ const register = async (req, res) => {
     }
 }
 
+const update = async (req, res) => {
+    const updateThisAdmin = req.params.id;
+
+    try {
+        await authService.updateAdmin(updateThisAdmin, req.body);
+
+        return res.status(200).send({ message: "User updated", status: true });
+    } catch (error) {
+        return res.status(500).send({ error: error.message });
+    }
+}
+
 const login = async (req, res) => {
     const { email, password } = req.body;
 
@@ -29,7 +41,7 @@ const login = async (req, res) => {
         return res.status(200).send({ jwt, message: "Login successful" });
     } catch (error) {
         console.error("Error during login: ", error.message);
-        return res.status(500).send({ message: "An error occurred during login", error: error.message });
+        return res.status(500).send({ status: false, message: "An error occurred during login", error: error.message });
     }
 };
 
@@ -37,4 +49,4 @@ const verify = async (req,res) => {
     return res.status(200).send({ valid: true })
 }
 
-module.exports = { login, register, verify };
+module.exports = { login, register, verify, update };

@@ -1,5 +1,5 @@
 const jwtProvider = require("../utils/jwtProvider.js");
-const userService = require("../services/user.service.js");
+const authService = require("../services/Auth.service.js");
 
 const authenticate = async (req, res, next) => {
     const token = req.headers?.authorization?.split(" ")[1];
@@ -13,7 +13,7 @@ const authenticate = async (req, res, next) => {
 
     try {
         const userId = jwtProvider.getUserIdFromToken(token);
-        const user = await userService.findUserById(userId);
+        const user = await authService.findUserById(userId);
 
         req.user = user;
         next();
