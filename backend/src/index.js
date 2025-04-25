@@ -31,6 +31,18 @@ app.use("/api/education-points", educationPointRouter);
 const adminEducationPointRouter = require("./routes/AdminEducationPoints.route");
 app.use("/api/admin/education-points", adminEducationPointRouter);
 
+const examNameRouter = require("./routes/ExamName.route");
+app.use("/api/exam-name", examNameRouter);
+
+const adminExamNameRouter = require("./routes/AdminExamName.route");
+app.use("/api/admin/exam-name", adminExamNameRouter);
+
+const examScoreRouter = require("./routes/ExamScore.route");
+app.use("/api/exam-scores", examScoreRouter);
+
+const adminExamScoreRouter = require("./routes/AdminExamScore.route");
+app.use("/api/admin/exam-scores", adminExamScoreRouter);
+
 // const authRouter = require("./routes/.route");
 // app.use("/api/user", userRouter);
 
