@@ -43,11 +43,11 @@ app.use("/api/exam-scores", examScoreRouter);
 const adminExamScoreRouter = require("./routes/AdminExamScore.route");
 app.use("/api/admin/exam-scores", adminExamScoreRouter);
 
-// const authRouter = require("./routes/.route");
-// app.use("/api/user", userRouter);
+const binaryOptionScore = require("./routes/BinaryOptionScore.route");
+app.use("/api/binary-option-score", binaryOptionScore);
 
-// const userRouter = require("./routes/user.route");
-// app.use("/api/user", userRouter);
+const adminBinaryOptionScore = require("./routes/AdminBinaryOptionScore.route");
+app.use("/api/admin/binary-option-score", adminBinaryOptionScore);
 
 
 
