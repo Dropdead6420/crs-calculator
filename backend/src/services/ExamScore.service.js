@@ -54,7 +54,7 @@ const getPoints = async (req) => {
     }
 
     // Convert examNameId to a number if it's a valid number
-    examNameId = Number(examNameId);
+    // yourMarks = Number(yourMarks);
 
     // Fetch only the relevant subject and pointsPerAbility fields
     const allDataOfExamScore = await ExamScore.find(
