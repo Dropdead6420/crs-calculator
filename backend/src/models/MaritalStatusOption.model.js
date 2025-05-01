@@ -7,6 +7,11 @@ const maritalStatusOptionSchema = new mongoose.Schema({
     unique: true,
     trim: true,
   },
+  nextQuestion: {
+    type: String,
+    required: true,
+    trim: true
+  },
   createdDate: {
     type: Date,
     default: Date.now,

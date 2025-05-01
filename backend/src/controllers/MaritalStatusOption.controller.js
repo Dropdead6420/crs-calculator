@@ -8,7 +8,7 @@ const getAllMaritalStatus = async (req, res) => {
         }
         return res.status(200).json({status: true, content: all});
     } catch (error) {
-        return res.status(500).json({ error: error.message });
+        return res.status(500).json({status:false, error: error.message });
     }
 };
 
@@ -18,10 +18,11 @@ const create = async (req, res) => {
             return res.status(400).send({status: false, message: "Please add some value"})
         }
 
-        const { value } = req.body;
+        const { value, nextQuestion } = req.body;
         if (!value) return res.status(400).json({ message: "Value is required" });
+        if (!nextQuestion) return res.status(400).json({ message: "Next Question is required" });
 
-        const created = await maritalStatusOption.createMaritalOption(value);
+        const created = await maritalStatusOption.createMaritalOption(req.body);
         return res.status(201).json({ status: true, data: created, message: "Created successfully" });
     } catch (error) {
         return res.status(500).json({ error: error.message });
@@ -36,10 +37,11 @@ const update = async (req, res) => {
         }
 
         const { id } = req.params;
-        const { value } = req.body;
+        const { value, nextQuestion } = req.body;
         if (!value) return res.status(400).json({ message: "Value is required" });
+        if (!nextQuestion) return res.status(400).json({ message: "Next Question is required" });
 
-        const updated = await maritalStatusOption.updateMaritalOption(id, value);
+        const updated = await maritalStatusOption.updateMaritalOption(id, req.body);
         return res.status(200).json({ status: true, data: updated, message: "Updated successfully" });
     } catch (error) {
         return res.status(500).json({ error: error.message });

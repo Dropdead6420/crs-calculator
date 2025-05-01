@@ -4,20 +4,24 @@ const getAllMaritalOption = async () => {
     return await MaritalStatusOption.find({});
 };
 
-const createMaritalOption = async (value) => {
+const createMaritalOption = async (data) => {
+    const { value, nextQuestion } = data;
+
     const existing = await MaritalStatusOption.findOne({ value: value.trim() });
     if (existing) throw new Error("This marital status already exists");
 
-    const option = new MaritalStatusOption({ value: value.trim() });
+    const option = new MaritalStatusOption({ value: value.trim(), nextQuestion: nextQuestion.trim() });
     return await option.save();
 };
 
-const updateMaritalOption = async (id, value) => {
+const updateMaritalOption = async (id, data) => {
+    const { value, nextQuestion } = data;
+
     await getMaritalById(id);
     
     const updated = await MaritalStatusOption.findByIdAndUpdate(
         id,
-        { value: value.trim() },
+        { value: value.trim(), nextQuestion: nextQuestion.trim() },
         { new: true }
     );
     if (!updated) throw new Error("Marital status not found");
