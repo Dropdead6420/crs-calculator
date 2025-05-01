@@ -49,6 +49,11 @@ app.use("/api/binary-option-score", binaryOptionScore);
 const adminBinaryOptionScore = require("./routes/AdminBinaryOptionScore.route");
 app.use("/api/admin/binary-option-score", adminBinaryOptionScore);
 
+const scoreOptionRouter = require("./routes/ScoreOption.route");
+app.use("/api/score-options", scoreOptionRouter);
+
+const adminScoreOptionRouter = require("./routes/AdminScoreOption.route");
+app.use("/api/admin/score-options", adminScoreOptionRouter);
 
 
 // const agePointsRouter = require("./routes/AgePoints.route");
