@@ -25,6 +25,12 @@ app.use("/api/age-points", agePointRouter);
 const adminAgePointRouter = require("./routes/AdminAgePoints.route");
 app.use("/api/admin/age-points", adminAgePointRouter);
 
+const crsEducationPointRouter = require('./routes/EducationCRSPoint.route');
+app.use("/api/crs-education", crsEducationPointRouter);
+
+const adminCRSEducationPointRouter = require('./routes/AdminEducationCRSPoint.route');
+app.use("/api/admin/crs-education", adminCRSEducationPointRouter);
+
 const educationPointRouter = require("./routes/EducationPoints.route");
 app.use("/api/education-points", educationPointRouter);
 
