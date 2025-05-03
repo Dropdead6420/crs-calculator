@@ -2,7 +2,7 @@ const router = require('express').Router();
 const examScoreController = require('../controllers/ExamScore.controller');
 
 router.get('/', examScoreController.getAllExamScores);
-router.get('/get-points', examScoreController.getPoints);
+router.post('/get-points', examScoreController.getPoints);
 router.get('/:id', examScoreController.getExamScoreById);
 
 
