@@ -10,26 +10,46 @@ const examScoreSchema = new mongoose.Schema({
         type: String,
         required: true
     },
-    speaking: {
-        type: Number,
-        required: true
+    languageScores: {
+        speaking: {
+            type: String,
+            required: true
+        },
+        listening: {
+            type: String,
+            required: true
+        },
+        reading: {
+            type: String,
+            required: true
+        },
+        writing: {
+            type: String,
+            required: true
+        }
     },
-    listening: {
-        type: Number,
-        required: true
+    fswp: {
+        point: {
+            type: Number,
+            required: true,
+            min: 0,
+            max: 6
+        }
     },
-    reading: {
-        type: Number,
-        required: true
-    },
-    writing: {
-        type: Number,
-        required: true
-    },
-    pointsPerAbility: {
-        type: Number,
-        required: true
-    }
+    crs: {
+        withSpouse: {
+            type: Number,
+            required: true,
+            min: 0,
+            max: 32
+        },
+        withoutSpouse: {
+            type: Number,
+            required: true,
+            min: 0,
+            max: 34
+        }
+    }    
 }, { timestamps: true });
 
 module.exports = mongoose.model('ExamScore', examScoreSchema);
