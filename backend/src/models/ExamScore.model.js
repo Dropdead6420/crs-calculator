@@ -49,7 +49,31 @@ const examScoreSchema = new mongoose.Schema({
             min: 0,
             max: 34
         }
-    }    
+    },
+    secondOfficialLanguage: {
+        fswp: {
+            point: {
+                type: Number,
+                required: true,
+                min: 0,
+                max: 4
+            }
+        },
+        crs: {
+            withSpouse: {
+                type: Number,
+                required: true,
+                min: 0,
+                max: 6
+            },
+            withoutSpouse: {
+                type: Number,
+                required: true,
+                min: 0,
+                max: 6
+            }
+        }
+    } 
 }, { timestamps: true });
 
 module.exports = mongoose.model('ExamScore', examScoreSchema);
