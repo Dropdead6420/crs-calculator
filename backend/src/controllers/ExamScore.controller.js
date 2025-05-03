@@ -13,12 +13,12 @@ const createExamScore = async (req, res) => {
             return res.status(400).json({ status: false, content: 'Invalid Exam name Id' });
         }
 
-        const fields = { speaking, listening, reading, writing, pointsPerAbility };
-        for (const [key, value] of Object.entries(fields)) {
-            if (typeof value !== 'number') {
-                return res.status(400).json({ status: false, content: `${key} must be a number` });
-            }
-        }
+        // const fields = { speaking, listening, reading, writing, pointsPerAbility };
+        // for (const [key, value] of Object.entries(fields)) {
+        //     if (typeof value !== 'number') {
+        //         return res.status(400).json({ status: false, content: `${key} must be a number` });
+        //     }
+        // }
 
         const score = await examScoreService.createExamScore(req.body);
         res.status(201).json({ status: true, content: score });
@@ -30,7 +30,11 @@ const createExamScore = async (req, res) => {
 const getAllExamScores = async (req, res) => {
     try {
         const scores = await examScoreService.getAllExamScores();
-        res.status(200).json({ status: true, data: scores });
+        if (scores.length < 0) {
+            return res.status(200).json({ status: true, content: "There is no data available" })
+        }
+
+        res.status(200).json({ status: true, content: scores });
     } catch (err) {
         res.status(500).json({ status: false, message: err.message });
     }
