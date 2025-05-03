@@ -4,22 +4,31 @@ const agePointsSchema = new mongoose.Schema({
   ageRange: {
     type: String,
     required: true,
-    trim: true
+    trim: true,
+    unique: true
   },
-  coreHumanCapitalFactors: { // Renamed from "Core / human capital factors"
-    pointsWithSpouse: {
+  fswp: {
+    point: {
       type: Number,
-      required: true
-    },
-    pointsWithoutSpouse: {
-      type: Number,
-      required: true
+      required: true,
+      max: 12,
+      min: 0
     }
   },
-  agePoints: {
-    type: Number,
-    required: true
-  }
+  crs: { 
+    withSpouse: {
+      type: Number,
+      required: true,
+      max: 100,
+      min: 0
+    },
+    withoutSpouse: {
+      type: Number,
+      required: true,
+      max: 110,
+      min: 0
+    }
+  },
 });
 
 module.exports = mongoose.model("AgePoints", agePointsSchema);
