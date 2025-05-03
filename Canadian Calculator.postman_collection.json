@@ -1,0 +1,1779 @@
+{
+	"info": {
+		"_postman_id": "8484d3e7-d336-4385-b243-b6f67df1ce0f",
+		"name": "Canadian Calculator",
+		"description": "[https://www.canada.ca/en/immigration-refugees-citizenship/services/immigrate-canada/express-entry/check-score.html](https://www.canada.ca/en/immigration-refugees-citizenship/services/immigrate-canada/express-entry/check-score.html)",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "43327476",
+		"_collection_link": "https://hexbytes.postman.co/workspace/HexBytes's-Workspace~d572dc77-1c39-48b1-842f-b834739468ec/collection/44343277-8484d3e7-d336-4385-b243-b6f67df1ce0f?action=share&source=collection_link&creator=43327476"
+	},
+	"item": [
+		{
+			"name": "Admin",
+			"item": [
+				{
+					"name": "Marital Status Option",
+					"item": [
+						{
+							"name": "Add Marital Status Option",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2ODA5ZGVjYWNhYWRkMTVhOGQ2ZmJmOTMiLCJpYXQiOjE3NDYwODA1MTUsImV4cCI6MTc0NjE2NjkxNX0.NHO5Ek1devCq56-mXH58cvVHYp0ZjV2R1B210nqYXzY",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"value\": \"Widowed Test\",\r\n    \"nextQuestion\": \"Question3Part1\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:5000/api/admin/marital-status/add",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "5000",
+									"path": [
+										"api",
+										"admin",
+										"marital-status",
+										"add"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Update Marital Status",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2ODA5ZGVjYWNhYWRkMTVhOGQ2ZmJmOTMiLCJpYXQiOjE3NDYwODA1MTUsImV4cCI6MTc0NjE2NjkxNX0.NHO5Ek1devCq56-mXH58cvVHYp0ZjV2R1B210nqYXzY",
+											"type": "string"
+										}
+									]
+								},
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"value\": \"Widowed\",\r\n    \"nextQuestion\": \"Question3\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:5000/api/admin/marital-status/update/681320f7366ba214b182556d",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "5000",
+									"path": [
+										"api",
+										"admin",
+										"marital-status",
+										"update",
+										"681320f7366ba214b182556d"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Remove Marital Status",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2ODA5ZGVjYWNhYWRkMTVhOGQ2ZmJmOTMiLCJpYXQiOjE3NDYwODA1MTUsImV4cCI6MTc0NjE2NjkxNX0.NHO5Ek1devCq56-mXH58cvVHYp0ZjV2R1B210nqYXzY",
+											"type": "string"
+										}
+									]
+								},
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:5000/api/admin/marital-status/delete/681331e0b622f8939348e940",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "5000",
+									"path": [
+										"api",
+										"admin",
+										"marital-status",
+										"delete",
+										"681331e0b622f8939348e940"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Age Points",
+					"item": [
+						{
+							"name": "Add Age Points",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2ODA5ZGVjYWNhYWRkMTVhOGQ2ZmJmOTMiLCJpYXQiOjE3NDYxOTA2NjEsImV4cCI6MTc0NjI3NzA2MX0.Sr7yWJqo0_rBSiyZlw55mKvNxErCC2nXUyMRHZ3i_hQ",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"ageRange\": \"20\",\r\n    \"crs\": {\r\n        \"withSpouse\": 195,\r\n        \"withoutSpouse\": 99\r\n    },\r\n    \"fswp\": {\r\n        \"point\": 120\r\n    }\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:5000/api/admin/age-points/add",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "5000",
+									"path": [
+										"api",
+										"admin",
+										"age-points",
+										"add"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Update Age Points",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2ODA5ZGVjYWNhYWRkMTVhOGQ2ZmJmOTMiLCJpYXQiOjE3NDU0Nzk1NzMsImV4cCI6MTc0NTU2NTk3M30.N0c4HOe0mqrRt5q5d0SIaC9MUnlmwXO6oiR8-d9zlFI",
+											"type": "string"
+										}
+									]
+								},
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"coreHumanCapitalFactors\": {\r\n            \"pointsWithSpouse\": 90,\r\n            \"pointsWithoutSpouse\": 99\r\n        },\r\n        \"ageRange\": \"18\",\r\n        \"agePoints\": 12\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:5000/api/admin/age-points/update/680a0e26211d7dfe828ed6f2",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "5000",
+									"path": [
+										"api",
+										"admin",
+										"age-points",
+										"update",
+										"680a0e26211d7dfe828ed6f2"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Remove Age Points",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2ODA5ZGVjYWNhYWRkMTVhOGQ2ZmJmOTMiLCJpYXQiOjE3NDU0Nzk1NzMsImV4cCI6MTc0NTU2NTk3M30.N0c4HOe0mqrRt5q5d0SIaC9MUnlmwXO6oiR8-d9zlFI",
+											"type": "string"
+										}
+									]
+								},
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:5000/api/admin/age-points/delete/680a0e26211d7dfe828ed6f2",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "5000",
+									"path": [
+										"api",
+										"admin",
+										"age-points",
+										"delete",
+										"680a0e26211d7dfe828ed6f2"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Education Points",
+					"item": [
+						{
+							"name": "Add Education Points",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2ODA5ZGVjYWNhYWRkMTVhOGQ2ZmJmOTMiLCJpYXQiOjE3NDU0Nzk1NzMsImV4cCI6MTc0NTU2NTk3M30.N0c4HOe0mqrRt5q5d0SIaC9MUnlmwXO6oiR8-d9zlFI",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"crs\": {\r\n        \"levelName\": \"Secondary diploma (high school graduation)\",\r\n        \"withSpouse\": \"28\",\r\n        \"withoutSpouse\":\"30\"\r\n    },\r\n    \"fsw\": {\r\n        \"levelName\":\"Secondary school/high school diploma\",\r\n        \"points\": \"5\"\r\n    }\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:5000/api/admin/education-points/add",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "5000",
+									"path": [
+										"api",
+										"admin",
+										"education-points",
+										"add"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Edit Education Points",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2ODA5ZGVjYWNhYWRkMTVhOGQ2ZmJmOTMiLCJpYXQiOjE3NDU0Nzk1NzMsImV4cCI6MTc0NTU2NTk3M30.N0c4HOe0mqrRt5q5d0SIaC9MUnlmwXO6oiR8-d9zlFI",
+											"type": "string"
+										}
+									]
+								},
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"fsw\": {\r\n        \"points\": \"77\"\r\n    }\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:5000/api/admin/education-points/update/680a2820f5b139887b956deb",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "5000",
+									"path": [
+										"api",
+										"admin",
+										"education-points",
+										"update",
+										"680a2820f5b139887b956deb"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Remove Education Point",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2ODA5ZGVjYWNhYWRkMTVhOGQ2ZmJmOTMiLCJpYXQiOjE3NDU0Nzk1NzMsImV4cCI6MTc0NTU2NTk3M30.N0c4HOe0mqrRt5q5d0SIaC9MUnlmwXO6oiR8-d9zlFI",
+											"type": "string"
+										}
+									]
+								},
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:5000/api/admin/education-points/delete/680a2c8a2a3cdc49eaa24fb6",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "5000",
+									"path": [
+										"api",
+										"admin",
+										"education-points",
+										"delete",
+										"680a2c8a2a3cdc49eaa24fb6"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Exam Name",
+					"item": [
+						{
+							"name": "Add New Exam Name",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2ODA5ZGVjYWNhYWRkMTVhOGQ2ZmJmOTMiLCJpYXQiOjE3NDYyNjcwMDksImV4cCI6MTc0NjM1MzQwOX0.PupGhD1iBx8l0VBFbHWOIDn5E2malZWD116j1hwr6yQ",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\" :\"TCF Canada\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:5000/api/admin/exam-name/add",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "5000",
+									"path": [
+										"api",
+										"admin",
+										"exam-name",
+										"add"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Update Exam Name",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2ODA5ZGVjYWNhYWRkMTVhOGQ2ZmJmOTMiLCJpYXQiOjE3NDYyNjcwMDksImV4cCI6MTc0NjM1MzQwOX0.PupGhD1iBx8l0VBFbHWOIDn5E2malZWD116j1hwr6yQ",
+											"type": "string"
+										}
+									]
+								},
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\":\"CELPIP-G\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:5000/api/admin/exam-name/update/680b26405392e6317518ca13",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "5000",
+									"path": [
+										"api",
+										"admin",
+										"exam-name",
+										"update",
+										"680b26405392e6317518ca13"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Remove Exam Name",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2ODA5ZGVjYWNhYWRkMTVhOGQ2ZmJmOTMiLCJpYXQiOjE3NDU0Nzk1NzMsImV4cCI6MTc0NTU2NTk3M30.N0c4HOe0mqrRt5q5d0SIaC9MUnlmwXO6oiR8-d9zlFI",
+											"type": "string"
+										}
+									]
+								},
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:5000/api/admin/exam-name/delete/680b25a0642f3284b4b753d1",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "5000",
+									"path": [
+										"api",
+										"admin",
+										"exam-name",
+										"delete",
+										"680b25a0642f3284b4b753d1"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Exam Score",
+					"item": [
+						{
+							"name": "Add Exam Score",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2ODA5ZGVjYWNhYWRkMTVhOGQ2ZmJmOTMiLCJpYXQiOjE3NDYyNTI1NTYsImV4cCI6MTc0NjMzODk1Nn0.EdroCS3lm2mc1Wq3FENT0wO9Tw9BR13vGwy0Uc3t_XY",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"examNameId\": \"680c8fa63eef75d2cbe91246\",\r\n    \"clbLevel\": \"CLB 6\",\r\n    \"languageScores\": {\r\n        \"speaking\":\"5.5\",\r\n        \"listening\":\"5.5\",\r\n        \"reading\":\"5-5.5\",\r\n        \"writing\":\"5.5\"\r\n    },\r\n    \"fswp\": {\r\n        \"point\": 0\r\n    },\r\n    \"crs\": {\r\n        \"withSpouse\": 8,\r\n        \"withoutSpouse\": 9\r\n\r\n    }\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:5000/api/admin/exam-scores/add",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "5000",
+									"path": [
+										"api",
+										"admin",
+										"exam-scores",
+										"add"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Update Exam Score",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2ODA5ZGVjYWNhYWRkMTVhOGQ2ZmJmOTMiLCJpYXQiOjE3NDYyNjcwMDksImV4cCI6MTc0NjM1MzQwOX0.PupGhD1iBx8l0VBFbHWOIDn5E2malZWD116j1hwr6yQ",
+											"type": "string"
+										}
+									]
+								},
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n   \"secondOfficialLanguage\": {\r\n        \"fswp\": {\r\n            \"point\": 4\r\n        },\r\n        \"crs\": {\r\n            \"withSpouse\": 6,\r\n            \"withoutSpouse\": 6\r\n        }\r\n    }\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:5000/api/admin/exam-scores/update/6815cc65c62a672cf186b9e2",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "5000",
+									"path": [
+										"api",
+										"admin",
+										"exam-scores",
+										"update",
+										"6815cc65c62a672cf186b9e2"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Remove Exam Score",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2ODA5ZGVjYWNhYWRkMTVhOGQ2ZmJmOTMiLCJpYXQiOjE3NDYyNTI1NTYsImV4cCI6MTc0NjMzODk1Nn0.EdroCS3lm2mc1Wq3FENT0wO9Tw9BR13vGwy0Uc3t_XY",
+											"type": "string"
+										}
+									]
+								},
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:5000/api/admin/exam-scores/delete/680b44e7a78b3dbdf16493da",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "5000",
+									"path": [
+										"api",
+										"admin",
+										"exam-scores",
+										"delete",
+										"680b44e7a78b3dbdf16493da"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Binary Option Score",
+					"item": [
+						{
+							"name": "Add Binary Option Score",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2ODA5ZGVjYWNhYWRkMTVhOGQ2ZmJmOTMiLCJpYXQiOjE3NDU2NTM2MzksImV4cCI6MTc0NTc0MDAzOX0.PQKqf6cQuyRUrEP5XZE36xKHCuY5MOKVt3ht3Vnlmho",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"question\" : \"Your past study in Canada\",\r\n    \"option\" : true,\r\n    \"maximumPoint\": 5\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:5000/api/admin/binary-option-score/add",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "5000",
+									"path": [
+										"api",
+										"admin",
+										"binary-option-score",
+										"add"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Remove the Binary Option Score",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2ODA5ZGVjYWNhYWRkMTVhOGQ2ZmJmOTMiLCJpYXQiOjE3NDU2NTM2MzksImV4cCI6MTc0NTc0MDAzOX0.PQKqf6cQuyRUrEP5XZE36xKHCuY5MOKVt3ht3Vnlmho",
+											"type": "string"
+										}
+									]
+								},
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:5000/api/admin/binary-option-score/delete/680c9467afef195a682a3f38",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "5000",
+									"path": [
+										"api",
+										"admin",
+										"binary-option-score",
+										"delete",
+										"680c9467afef195a682a3f38"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Update Binary Option Score",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2ODA5ZGVjYWNhYWRkMTVhOGQ2ZmJmOTMiLCJpYXQiOjE3NDU2NTM2MzksImV4cCI6MTc0NTc0MDAzOX0.PQKqf6cQuyRUrEP5XZE36xKHCuY5MOKVt3ht3Vnlmho",
+											"type": "string"
+										}
+									]
+								},
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"maximumPoint\":9\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:5000/api/admin/binary-option-score/update/680cac0e6ca56578bd1939c7",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "5000",
+									"path": [
+										"api",
+										"admin",
+										"binary-option-score",
+										"update",
+										"680cac0e6ca56578bd1939c7"
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"description": "Your spouse or partner’s language  \nlevel\n\nYour past study in Canada\n\nYour spouse or partner’s past study  \nin Canada\n\n...\n\nArranged LMIA (Skilled Worker)"
+				},
+				{
+					"name": "Score Option",
+					"item": [
+						{
+							"name": "Add Score",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2ODA5ZGVjYWNhYWRkMTVhOGQ2ZmJmOTMiLCJpYXQiOjE3NDYwODA1MTUsImV4cCI6MTc0NjE2NjkxNX0.NHO5Ek1devCq56-mXH58cvVHYp0ZjV2R1B210nqYXzY",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"exam\": \"680c8fa63eef75d2cbe91246\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:5000/api/admin/score-options/add",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "5000",
+									"path": [
+										"api",
+										"admin",
+										"score-options",
+										"add"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Update Score Option",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2ODA5ZGVjYWNhYWRkMTVhOGQ2ZmJmOTMiLCJpYXQiOjE3NDYwODA1MTUsImV4cCI6MTc0NjE2NjkxNX0.NHO5Ek1devCq56-mXH58cvVHYp0ZjV2R1B210nqYXzY",
+											"type": "string"
+										}
+									]
+								},
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"writing\": [\"0-3.5\", \"4.0-4.5\",\"5.0\",\"5.5\",\"6.0\",\"6.5\",\"7.0\",\"7.5-9.0\"]\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:5000/api/admin/score-options/update/68135d8c43caa0b88d56c603",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "5000",
+									"path": [
+										"api",
+										"admin",
+										"score-options",
+										"update",
+										"68135d8c43caa0b88d56c603"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Delete Score Option",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2ODA5ZGVjYWNhYWRkMTVhOGQ2ZmJmOTMiLCJpYXQiOjE3NDYwODA1MTUsImV4cCI6MTc0NjE2NjkxNX0.NHO5Ek1devCq56-mXH58cvVHYp0ZjV2R1B210nqYXzY",
+											"type": "string"
+										}
+									]
+								},
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:5000/api/admin/score-options/delete/afhjdsaf",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "5000",
+									"path": [
+										"api",
+										"admin",
+										"score-options",
+										"delete",
+										"afhjdsaf"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "CRS Education",
+					"item": [
+						{
+							"name": "Add CRS Education",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2ODA5ZGVjYWNhYWRkMTVhOGQ2ZmJmOTMiLCJpYXQiOjE3NDYyNDgwMjAsImV4cCI6MTc0NjMzNDQyMH0.RDSdGvTOZe2dbXRLfMhhMLbni5M-7lmRzBwM-slt-kE",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"educationLevel\" :\"Doctoral level university degree (Ph.D.)\",\r\n    \"withSpouse\": 140,\r\n    \"withoutSpouse\": 150\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:5000/api/admin/crs-education/add",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "5000",
+									"path": [
+										"api",
+										"admin",
+										"crs-education",
+										"add"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Update CRS Education",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2ODA5ZGVjYWNhYWRkMTVhOGQ2ZmJmOTMiLCJpYXQiOjE3NDYyNDgwMjAsImV4cCI6MTc0NjMzNDQyMH0.RDSdGvTOZe2dbXRLfMhhMLbni5M-7lmRzBwM-slt-kE",
+											"type": "string"
+										}
+									]
+								},
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"educationLevel\": \"Less than secondary school (high school)\",\r\n    \"withSpouse\": 0,\r\n    \"withoutSpouse\": 0\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:5000/api/admin/crs-education/update/6815a25a5ea89d3a03790ec4",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "5000",
+									"path": [
+										"api",
+										"admin",
+										"crs-education",
+										"update",
+										"6815a25a5ea89d3a03790ec4"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Delete CRS Education Level",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2ODA5ZGVjYWNhYWRkMTVhOGQ2ZmJmOTMiLCJpYXQiOjE3NDYyNDgwMjAsImV4cCI6MTc0NjMzNDQyMH0.RDSdGvTOZe2dbXRLfMhhMLbni5M-7lmRzBwM-slt-kE",
+											"type": "string"
+										}
+									]
+								},
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:5000/api/admin/crs-education/delete/6815a3cfcd34eaafaf8c9f2a",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "5000",
+									"path": [
+										"api",
+										"admin",
+										"crs-education",
+										"delete",
+										"6815a3cfcd34eaafaf8c9f2a"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Canada CRS Education",
+					"item": [
+						{
+							"name": "Add Canada CRS Education",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2ODA5ZGVjYWNhYWRkMTVhOGQ2ZmJmOTMiLCJpYXQiOjE3NDYyNDgwMjAsImV4cCI6MTc0NjMzNDQyMH0.RDSdGvTOZe2dbXRLfMhhMLbni5M-7lmRzBwM-slt-kE",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"educationLevel\": \"Secondary (high school) or less\",\r\n    \"point\": 0\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:5000/api/admin/canada/crs/education/add",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "5000",
+									"path": [
+										"api",
+										"admin",
+										"canada",
+										"crs",
+										"education",
+										"add"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Delete the Canada Education Level",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2ODA5ZGVjYWNhYWRkMTVhOGQ2ZmJmOTMiLCJpYXQiOjE3NDYyNTI1NTYsImV4cCI6MTc0NjMzODk1Nn0.EdroCS3lm2mc1Wq3FENT0wO9Tw9BR13vGwy0Uc3t_XY",
+											"type": "string"
+										}
+									]
+								},
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:5000/api/admin/canada/crs/education/delete/6815b242f4a89c36881487b8",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "5000",
+									"path": [
+										"api",
+										"admin",
+										"canada",
+										"crs",
+										"education",
+										"delete",
+										"6815b242f4a89c36881487b8"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Update Canada CRS Education",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2ODA5ZGVjYWNhYWRkMTVhOGQ2ZmJmOTMiLCJpYXQiOjE3NDYyNTI1NTYsImV4cCI6MTc0NjMzODk1Nn0.EdroCS3lm2mc1Wq3FENT0wO9Tw9BR13vGwy0Uc3t_XY",
+											"type": "string"
+										}
+									]
+								},
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"point\": 15\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:5000/api/admin/canada/crs/education/update/6815b24af4a89c36881487bc",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "5000",
+									"path": [
+										"api",
+										"admin",
+										"canada",
+										"crs",
+										"education",
+										"update",
+										"6815b24af4a89c36881487bc"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Canada Work Experience",
+					"item": [
+						{
+							"name": "Add Canada Work Experience",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2ODA5ZGVjYWNhYWRkMTVhOGQ2ZmJmOTMiLCJpYXQiOjE3NDYyNzc2MTYsImV4cCI6MTc0NjM2NDAxNn0.RIgYzRAYu0TFPoOddeaZStVzIMuwFNY9AfSBXSWG4zs",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"experienceRange\": \"Testing\",\r\n    \"withSpouse\": 70,\r\n    \"withoutSpouse\": 80\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:5000/api/admin/canada/experience/add",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "5000",
+									"path": [
+										"api",
+										"admin",
+										"canada",
+										"experience",
+										"add"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Update Canada Work Experience",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2ODA5ZGVjYWNhYWRkMTVhOGQ2ZmJmOTMiLCJpYXQiOjE3NDYyNzc2MTYsImV4cCI6MTc0NjM2NDAxNn0.RIgYzRAYu0TFPoOddeaZStVzIMuwFNY9AfSBXSWG4zs",
+											"type": "string"
+										}
+									]
+								},
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"experienceRange\":\"None or less than a year\",\r\n    \"withSpouse\": 0,\r\n    \"withoutSpouse\": 0\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:5000/api/admin/canada/experience/update/681617bcb410e3f7bc9a2aa1",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "5000",
+									"path": [
+										"api",
+										"admin",
+										"canada",
+										"experience",
+										"update",
+										"681617bcb410e3f7bc9a2aa1"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Delete Canada Work Experience",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2ODA5ZGVjYWNhYWRkMTVhOGQ2ZmJmOTMiLCJpYXQiOjE3NDYyNzkzMzIsImV4cCI6MTc0NjM2NTczMn0.CF_CfNwTbz-zboms4tzsDhDbOwpIzzypEpGCZ06wyNY",
+											"type": "string"
+										}
+									]
+								},
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:5000/api/admin/canada/experience/delete/68161b1caafcd3bb58e81806",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "5000",
+									"path": [
+										"api",
+										"admin",
+										"canada",
+										"experience",
+										"delete",
+										"68161b1caafcd3bb58e81806"
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"description": "Question no. 6 part 1\n\nOnly For CRS\n\nTheir is no relation with 67 calculator"
+				}
+			]
+		},
+		{
+			"name": "User",
+			"item": [
+				{
+					"name": "Add User",
+					"request": {
+						"method": "POST",
+						"header": []
+					},
+					"response": []
+				},
+				{
+					"name": "Update",
+					"request": {
+						"method": "PUT",
+						"header": []
+					},
+					"response": []
+				}
+			],
+			"description": "Maybe not complete this API so go through it later"
+		},
+		{
+			"name": "Auth",
+			"item": [
+				{
+					"name": "Login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"saurabh@gmail.com\",\r\n    \"password\": \"Saurabh\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5000/api/admin/login",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"admin",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Register",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"fullName\": \"Update This User\",\r\n    \"phone\": \"7217676541\",\r\n    \"email\": \"testing@gmail.com\",\r\n    \"country\": \"India\",\r\n    \"password\": \"Testing\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5000/api/admin/register",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"admin",
+								"register"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update User",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2ODA5ZGVjYWNhYWRkMTVhOGQ2ZmJmOTMiLCJpYXQiOjE3NDU0Nzk1NzMsImV4cCI6MTc0NTU2NTk3M30.N0c4HOe0mqrRt5q5d0SIaC9MUnlmwXO6oiR8-d9zlFI",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\":\"rahul123@gmail.com\",\r\n    \"fullName\": \"Update\",\r\n    \"status\": \"Active\",\r\n    \"role\":\"Super Admin\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5000/api/admin/update/6809e01c7a43b0ada0ff90a7",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"admin",
+								"update",
+								"6809e01c7a43b0ada0ff90a7"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Education Points",
+			"item": [
+				{
+					"name": "Educational Points",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5000/api/education-points",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"education-points"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Exam Name",
+			"item": [
+				{
+					"name": "Get All Exam Name",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5000/api/exam-name",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"exam-name"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Exam by Id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5000/api/exam-name/680b26405392e6317518ca15",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"exam-name",
+								"680b26405392e6317518ca15"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Exam Score Initial",
+			"item": [
+				{
+					"name": "Get All Exam Score",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5000/api/exam-scores",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"exam-scores"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Score Detail By Exam Score Id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5000/api/exam-scores/680c8fa63eef75d2cbe91246",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"exam-scores",
+								"680c8fa63eef75d2cbe91246"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get points via examId and Your score",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"examNameId\": \"680c8fa63eef75d2cbe91246\", \r\n    \"yourMarks\": \"8\", \r\n    \"subject\":\"speaking\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5000/api/exam-scores/get-points",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"exam-scores",
+								"get-points"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Age Points",
+			"item": [
+				{
+					"name": "All Age Points",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5000/api/age-points",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"age-points"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Marital Status Option",
+			"item": [
+				{
+					"name": "Get All Marital Status",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5000/api/marital-status",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"marital-status"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Binary Option Score",
+			"item": [
+				{
+					"name": "Get All Binary Option Score",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5000/api/binary-option-score",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"binary-option-score"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Binary Option Score via Id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5000/api/binary-option-score/680cac0e6ca56578bd1939c7",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"binary-option-score",
+								"680cac0e6ca56578bd1939c7"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Binary Option Score via Question",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2ODA5ZGVjYWNhYWRkMTVhOGQ2ZmJmOTMiLCJpYXQiOjE3NDU2NTM2MzksImV4cCI6MTc0NTc0MDAzOX0.PQKqf6cQuyRUrEP5XZE36xKHCuY5MOKVt3ht3Vnlmho",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"question\":\"Your past study in Canada\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5000/api/binary-option-score/question",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"binary-option-score",
+								"question"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"description": "Your spouse or partner’s language  \nlevel\n\nYour past study in Canada\n\nYour spouse or partner’s past study  \nin Canada\n\n...\n\nArranged LMIA (Skilled Worker)"
+		},
+		{
+			"name": "Score Option",
+			"item": [
+				{
+					"name": "Get all score option",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5000/api/score-options",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"score-options"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Sore By Exam Name",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5000/api/score-options/exam/IELTS",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"score-options",
+								"exam",
+								"IELTS"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "CRS Education Level",
+			"item": [
+				{
+					"name": "Get all education",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5000/api/crs-education",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"crs-education"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"description": "CRS and 67 Education level are seperated"
+		},
+		{
+			"name": "Canada CRS Education",
+			"item": [
+				{
+					"name": "Get all Canada CRS Point",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5000/api/canada/crs/education",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"canada",
+								"crs",
+								"education"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Canada Work Experience",
+			"item": [
+				{
+					"name": "Get All Canada work experience",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5000/api/canada/experience",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"canada",
+								"experience"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
