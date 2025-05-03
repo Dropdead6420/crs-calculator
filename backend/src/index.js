@@ -67,6 +67,11 @@ app.use("/api/score-options", scoreOptionRouter);
 const adminScoreOptionRouter = require("./routes/AdminScoreOption.route");
 app.use("/api/admin/score-options", adminScoreOptionRouter);
 
+const canadaWorkExperience = require("./routes/CanadaWorkExperience.route");
+app.use("/api/canada/experience", canadaWorkExperience);
+
+const adminCanadaWorkExperience = require("./routes/AdminCanadaWorkExperience.route");
+app.use("/api/admin/canada/experience", adminCanadaWorkExperience);
 
 // const agePointsRouter = require("./routes/AgePoints.route");
 // app.use("/super-admin/age_points", agePointsRouter);
