@@ -31,6 +31,12 @@ app.use("/api/crs-education", crsEducationPointRouter);
 const adminCRSEducationPointRouter = require('./routes/AdminEducationCRSPoint.route');
 app.use("/api/admin/crs-education", adminCRSEducationPointRouter);
 
+const canadaCRSEducation = require('./routes/CanadaCRSEducation.route');
+app.use("/api/canada/crs/education", canadaCRSEducation);
+
+const adminCanadaCRSEducation = require('./routes/AdminCanadaCRSEducation.route');
+app.use("/api/admin/canada/crs/education", adminCanadaCRSEducation);
+
 const educationPointRouter = require("./routes/EducationPoints.route");
 app.use("/api/education-points", educationPointRouter);
 
