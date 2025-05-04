@@ -34,7 +34,7 @@ const create = async (req, res) => {
 
     const data = req.body;
     const created = await canadaWorkExperienceService.createCanadaWorkExperience(data);
-    res.status(201).json({ status: true, content: created, content: "Canada work experience addied successfully" });
+    res.status(201).json({ status: true, content: created, message: "Canada work experience added successfully" });
   } catch (error) {
     res.status(500).json({ error: error.message });
   }
