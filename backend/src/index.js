@@ -73,6 +73,12 @@ app.use("/api/canada/experience", canadaWorkExperience);
 const adminCanadaWorkExperience = require("./routes/AdminCanadaWorkExperience.route");
 app.use("/api/admin/canada/experience", adminCanadaWorkExperience);
 
+const foreignWorkExperience = require("./routes/ForeignWorkExperience.route");
+app.use("/api/foreign/experience", foreignWorkExperience);
+
+const adminForeignWorkExperience = require("./routes/AdminForeignWorkExperience.route");
+app.use("/api/admin/foreign/experience", adminForeignWorkExperience);
+
 // const agePointsRouter = require("./routes/AgePoints.route");
 // app.use("/super-admin/age_points", agePointsRouter);
 
