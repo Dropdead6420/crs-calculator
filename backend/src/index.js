@@ -79,6 +79,12 @@ app.use("/api/foreign/experience", foreignWorkExperience);
 const adminForeignWorkExperience = require("./routes/AdminForeignWorkExperience.route");
 app.use("/api/admin/foreign/experience", adminForeignWorkExperience);
 
+const NOCTeerJobOfferRouter = require("./routes/NOCTeerJobOffer.route");
+app.use("/api/noc-job", NOCTeerJobOfferRouter);
+
+const adminNOCTeerRouter = require("./routes/AdminNOCTeerJobOffer.route");
+app.use("/api/admin/noc-job", adminNOCTeerRouter);
+
 // const agePointsRouter = require("./routes/AgePoints.route");
 // app.use("/super-admin/age_points", agePointsRouter);
 
