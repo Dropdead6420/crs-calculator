@@ -63,12 +63,8 @@ const getScoreViaInfo = async (data) => {
   let clbCRS = 0;
   if (clbScore >= 9) {
     clbCRS = Math.max(yourExperienceRange.crs[1], yourExperienceRange.crs[0]) || 0;
-    console.log(`CLB score ${clbScore} is >= 9, assigning higher CRS:`, clbCRS);
   } else if (clbScore === 7 || clbScore === 8) {
     clbCRS = Math.min(yourExperienceRange.crs[0], yourExperienceRange.crs[1]) || 0;
-    console.log(`CLB score ${clbScore} is 7 or 8, assigning lower CRS:`, clbCRS);
-  } else {
-    console.log(`CLB score ${clbScore} is less than 7, CRS assigned: 0`);
   }
 
   // Process Canadian Work Experience
@@ -79,21 +75,14 @@ const getScoreViaInfo = async (data) => {
       if (cwNumber !== null) {
         if (cwNumber > 1) {
           canadianWorkScore = Math.max(yourExperienceRange.crs[1], yourExperienceRange.crs[0]) || 0;
-          console.log(`Canadian work > 1 year, assigning higher CRS:`, canadianWorkScore);
         } else {
           canadianWorkScore = Math.min(yourExperienceRange.crs[0], yourExperienceRange.crs[1]) || 0;
-          console.log(`Canadian work <= 1 year, assigning lower CRS:`, canadianWorkScore);
         }
-      } else {
-        console.log(`No valid number found in Canadian work string: "${cw}"`);
       }
     }
-  } else {
-    console.log("No valid Canadian work data found.");
   }
 
   const finalScore = Math.max(clbCRS, canadianWorkScore);
-  console.log(`Final score (higher of CLB CRS and Canadian Work CRS):`, finalScore);
   return {crs: finalScore, fswp: yourExperienceRange.fswp};
 };
 
