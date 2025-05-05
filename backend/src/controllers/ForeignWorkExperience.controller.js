@@ -13,18 +13,16 @@ const getAll = async (req, res) => {
   }
 };
 
-const getScoreViaEducationName = async (req, res) => {
-    try {
-        const all = await foreignWorkExperienceService.getAllCanadaWorkExperience();
-        if (all.length === 0 ) {
-            return res.status(200).json({status:true, content: "There is no content available"});    
-        }
+const getScoreViaInfo = async (req, res) => {
+  if (!req.body) {
+    return res.status(400).send({status: false, content: "Enter some data in body"});
+  }
+  // Three information : Experience Range, CLB, Canadian Work Experience
+  // canadianWork, experienceRange, clb
   
-        return res.status(200).json({status:true, content: all});
-    } catch (error) {
-        return res.status(500).json({ error: error.message });
-    }
-};
+  const score = await foreignWorkExperienceService.getScoreViaInfo(req.body);
+  res.status(200).json({status: true, content: score, message: "successfully calculated score" })
+}
 
 const create = async (req, res) => { 
   try {
@@ -66,7 +64,7 @@ const remove = async (req, res) => {
 
 module.exports = {
   getAll,
-  getScoreViaEducationName,
+  getScoreViaInfo,
   create,
   update,
   remove
