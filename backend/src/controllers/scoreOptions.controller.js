@@ -9,9 +9,9 @@ const getAllScoreOptions = async (req, res) => {
   }
 };
 
-const getScoreOptionByExamName = async (req, res) => {
+const getScoreOptionByExamId = async (req, res) => {
   try {
-    const result = await scoreOptionService.findByExamName(req.params.examName);
+    const result = await scoreOptionService.findByExamId(req.params.examId);
     if (!result) return res.status(404).json({ status: false, message: "Not found" });
     res.status(200).json({ status: true, content: result });
   } catch (err) {
@@ -68,4 +68,4 @@ const deleteScoreOption = async (req, res) => {
   }
 };
 
-module.exports = { createScoreOption, updateScoreOption, getAllScoreOptions, getScoreOptionByExamName, deleteScoreOption }
+module.exports = { createScoreOption, updateScoreOption, getAllScoreOptions, getScoreOptionByExamId, deleteScoreOption }

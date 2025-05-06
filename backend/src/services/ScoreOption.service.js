@@ -10,6 +10,11 @@ const findById = async (id) => {
 };
 
 const findByExamId = async (examId) => {
+    const isExamNameExist = await examName.findOne({ _id: examId });
+    if (!isExamNameExist) {
+        throw new Error("There is no Exam Detail found.");
+    }
+
     return await ScoreOptions.findOne({ exam: examId }).populate("exam");
 };
 
