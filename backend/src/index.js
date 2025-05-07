@@ -85,6 +85,9 @@ app.use("/api/noc-job", NOCTeerJobOfferRouter);
 const adminNOCTeerRouter = require("./routes/AdminNOCTeerJobOffer.route");
 app.use("/api/admin/noc-job", adminNOCTeerRouter);
 
+const testing = require("./routes/questionRoutes")
+app.use("/api/testing", testing);
+
 // const agePointsRouter = require("./routes/AgePoints.route");
 // app.use("/super-admin/age_points", agePointsRouter);
 
