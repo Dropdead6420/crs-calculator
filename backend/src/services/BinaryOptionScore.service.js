@@ -12,23 +12,23 @@ const createBinaryOptionScoreModel = async (data) => {
         return await BinaryOptionScoreModel.create(data);
     }
 
-    if (existingRecords.length === 1) {
-        const isOptionExists = await BinaryOptionScoreModel.findOne({
-            question: data.question,
-            option: data.option
-        });
+    // if (existingRecords.length === 1) {
+    //     const isOptionExists = await BinaryOptionScoreModel.findOne({
+    //         question: data.question,
+    //         option: data.option
+    //     });
 
-        if (isOptionExists) {
-            throw new Error("A record with this question and option already exists. Please update the existing record instead of creating a new one.");
-        }
+    //     if (isOptionExists) {
+    //         throw new Error("A record with this question and option already exists. Please update the existing record instead of creating a new one.");
+    //     }
 
-        return await BinaryOptionScoreModel.create(data);
-    }
+    //     return await BinaryOptionScoreModel.create(data);
+    // }
 
-    if (existingRecords.length === 2) {
-        // Both options already exist for this question
-        return "Both options already exist for this question. Please update the existing records instead.";
-    }
+    // if (existingRecords.length === 2) {
+    //     // Both options already exist for this question
+    //     return "Both options already exist for this question. Please update the existing records instead.";
+    // }
 
     // More than two records with the same question — data inconsistency
     throw new Error("Multiple records found for this question. Please clean up duplicate data before proceeding.");
@@ -60,7 +60,7 @@ const getScoreById = async (id) => {
 
 const updateScore = async (id, data) => {
     // Same question should not be exist
-    const dataFound = await getScoreById(id);
+    await getScoreById(id);
 
     if (data.question) {
         const existingQuestion = await BinaryOptionScoreModel.findOne({ 
@@ -72,13 +72,8 @@ const updateScore = async (id, data) => {
         }
     }
 
-    if (data.option) {
-        throw new Error("Not allow to update this");
-    }
-
-    if (data.maximumPoint) {
-        // Update your score
-        data.yourScore = dataFound.option ? data.maximumPoints : 0;
+    if (data.points.no) {
+        data.points.no = 0;
     }
 
     return await BinaryOptionScoreModel.findByIdAndUpdate(id, data, { new: true });

@@ -5,17 +5,16 @@ const binaryOptionScore = new mongoose.Schema({
         type: String,
         required: true
     },
-    option: {
-        type: Boolean,
-        required: true
-    },
-    maximumPoint: {
-        type: Number,
-        required: true
-    },
-    yourScore: {
-        type: Number,
-        default: 0
+    points: {
+        yes: {
+            type: Number,
+            required: true 
+        },
+        no: {
+            type: Number,
+            required: true,
+            default: 0
+        }
     }
 }, { timestamps: true });
 
