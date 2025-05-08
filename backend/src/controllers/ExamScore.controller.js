@@ -27,6 +27,21 @@ const createExamScore = async (req, res) => {
     }
 };
 
+const getPointsForSpouseLanguage = async (req, res) => {
+    try {
+        const score = await examScoreService.getPointsForSpouseLanguage(req)
+
+        if (!score) {
+            return res.status(404).json({ status: false, message: 'You are not eligible' });
+        }
+
+        return res.status(200).json({ status: true, content: score });
+    } catch (err) {
+        console.error(err);
+        return res.status(500).json({ status: false, message: err.message || 'Internal Server Error' });
+    }
+}
+
 const getAllExamScores = async (req, res) => {
     try {
         const scores = await examScoreService.getAllExamScores();
@@ -93,4 +108,4 @@ const deleteExamScore = async (req, res) => {
     }
 };
 
-module.exports = { getPoints, createExamScore, updateExamScore, deleteExamScore, getAllExamScores, getExamScoreById }
+module.exports = { getPoints, createExamScore, updateExamScore, deleteExamScore, getAllExamScores, getExamScoreById, getPointsForSpouseLanguage }

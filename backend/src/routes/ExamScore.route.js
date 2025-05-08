@@ -3,6 +3,7 @@ const examScoreController = require('../controllers/ExamScore.controller');
 
 router.get('/', examScoreController.getAllExamScores);
 router.post('/get-points', examScoreController.getPoints);
+router.post('/get-points/spouse-language', examScoreController.getPointsForSpouseLanguage);
 router.get('/:id', examScoreController.getExamScoreById);
 
 

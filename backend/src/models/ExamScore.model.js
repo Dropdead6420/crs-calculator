@@ -50,6 +50,12 @@ const examScoreSchema = new mongoose.Schema({
             max: 34
         }
     },
+    spouse: {
+        type: Number,
+        required:true,
+        min: 0,
+        max: 5
+    },
     secondOfficialLanguage: {
         fswp: {
             point: {
