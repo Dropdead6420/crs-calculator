@@ -103,7 +103,7 @@ const getPointsForSpouseLanguage = async (req) => {
 
     const allDataOfExamScore = await ExamScore.find(
         { examNameId },
-        { [`languageScores.${subject}`]: 1, spouse: 1 }
+        { [`languageScores.${subject}`]: 1, spouse: 1, clbLevel: 1 }
     );
 
     if (!allDataOfExamScore || allDataOfExamScore.length === 0) {
