@@ -88,4 +88,10 @@ app.use("/api/admin/noc-job", adminNOCTeerRouter);
 const testing = require("./routes/questionRoutes")
 app.use("/api/testing", testing);
 
+const spouseLanguage = require("./routes/SpouseLanguageMarking.route")
+app.use("/api/spouse/language", spouseLanguage);
+
+const adminSpouseLanguage = require("./routes/AdminSpouseLanguageMarking.route")
+app.use("/api/admin/spouse/language", adminSpouseLanguage);
+
 module.exports = app;
