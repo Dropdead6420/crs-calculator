@@ -94,4 +94,35 @@ app.use("/api/spouse/language", spouseLanguage);
 const adminSpouseLanguage = require("./routes/AdminSpouseLanguageMarking.route")
 app.use("/api/admin/spouse/language", adminSpouseLanguage);
 
+// Skill transferability factors
+app.post('/api/crs-language-education-points', (req, res) => {
+  const { educationLevel, clbLevel } = req.body;
+
+  if (!educationLevel || clbLevel === undefined) {
+    return res.status(400).json({ error: 'Missing educationLevel or clbLevel' });
+  }
+
+  let points = 0;
+
+  if (educationLevel === 'post_secondary') {
+    if (clbLevel >= 9) {
+      points = 25;
+    } else if (clbLevel >= 7) {
+      points = 13;
+    }
+  } else if (educationLevel === 'secondary') {
+    points = 0;
+  } else {
+    return res.status(400).json({ error: 'Invalid educationLevel' });
+  }
+
+  return res.json({ points });
+});
+
+const PORT = process.env.PORT || 3000;
+app.listen(PORT, () => {
+  console.log(`Server running on port ${PORT}`);
+});
+
+
 module.exports = app;
