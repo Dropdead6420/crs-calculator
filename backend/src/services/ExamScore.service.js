@@ -54,7 +54,7 @@ const getPoints = async (req) => {
 
     const allDataOfExamScore = await ExamScore.find(
         { examNameId },
-        { [`languageScores.${subject}`]: 1, fswp: 1, crs: 1, clbLevel: 1 }
+        { [`languageScores.${subject}`]: 1, fswp: 1, crs: 1, clbLevel: 1, "secondOfficialLanguage.crs.withSpouse": 1, "secondOfficialLanguage.crs.withoutSpouse": 1, "secondOfficialLanguage.fswp.point": 1 }
     );
 
     if (!allDataOfExamScore || allDataOfExamScore.length === 0) {
