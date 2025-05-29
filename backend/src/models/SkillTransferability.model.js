@@ -8,7 +8,7 @@ const OptionSchema = new mongoose.Schema({
         type: Number,
         required: true,
     },
-});
+}, {_id: false});
 
 const FactorSchema = new mongoose.Schema({
     title: {
@@ -20,12 +20,12 @@ const FactorSchema = new mongoose.Schema({
         required: true,
     },
     options: [OptionSchema],
-});
+}, {_id : false});
 
 const SkillTransferabilityFactorSchema = new mongoose.Schema({
     category: {
         type: String,
-        enum: ['Education + Language', 'Education + Canadian Experience', 'Foreign Experience + Language', 'Foreign Experience + Canadian Experience'],
+        enum: ['Education + Language', 'Education + Canadian Experience', 'Foreign Experience + Language', 'Foreign Experience + Canadian Experience' , 'Additional point French Language'],
         required: true,
     },
     factors: [FactorSchema],

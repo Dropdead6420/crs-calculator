@@ -25,24 +25,30 @@ router.get('/', async (req, res) => {
   }
 });
 
-// GET - Points by condition and title
+// GET - Points by condition, title, and category
 router.get('/points', async (req, res) => {
-  const { title, condition } = req.query;
+  const { title, condition, category } = req.query;
+
   try {
     const doc = await SkillTransferability.findOne({
+      category,
       'factors.title': title,
-      'factors.options.condition': condition
     });
 
     if (!doc) {
-      return res.status(404).json({ error: 'Factor not found' });
+      return res.status(404).json({ error: 'No matching document found for given category and title' });
     }
 
     const factor = doc.factors.find(f => f.title === title);
-    const option = factor.options.find(opt => opt.condition === condition);
+
+    if (!factor) {
+      return res.status(404).json({ error: 'Factor with specified title not found in factors array' });
+    }
+
+    const option = factor.options.find(opt => opt.condition.includes(condition));
 
     if (!option) {
-      return res.status(404).json({ error: 'Condition not found' });
+      return res.status(404).json({ error: `No matching condition "${condition}" found in options` });
     }
 
     res.json({ points: option.points });
