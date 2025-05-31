@@ -40,11 +40,17 @@ app.use("/api/noc-job", NOCTeerJobOfferRouter);
 const adminNOCTeerRouter = require("./routes/AdminNOCTeerJobOffer.route");
 app.use("/api/admin/noc-job", adminNOCTeerRouter);
 
-const skillTransferabilityRoute = require("./routes/skillTransferability.route")
+const skillTransferabilityRoute = require("./routes/SkillTransferability.route")
 app.use("/api/skill-transferability", skillTransferabilityRoute);
 
-const testing = require("./routes/questionRoutes")
-app.use("/api/testing", testing);
+const adminSkillTransferabilityRoute = require("./routes/AdminSkillTransferability.route")
+app.use("/api/admin/skill-transferability", adminSkillTransferabilityRoute);
+
+const crsQuestionRoute = require("./routes/CRSAllQuestion.route")
+app.use("/api/crs/questions/", crsQuestionRoute);
+
+const adminCRSQuestionRoute = require("./routes/AdminCRSAllQuestion.route")
+app.use("/api/admin/crs/questions/", adminCRSQuestionRoute);
 
 const authRouter = require("./routes/Auth.route");
 app.use("/api/admin", authRouter);
@@ -53,6 +59,5 @@ const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
   console.log(`Server running on port ${PORT}`);
 });
-
 
 module.exports = app;
